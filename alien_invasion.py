@@ -6,7 +6,6 @@ population = 7400000000
 
 print()
 print()
-print("Quickly! Aliens are invading the planet.")
 print("You need to activate the global defence network.")
 print("Hope you know the password, for Earth's sake...")
 print()
