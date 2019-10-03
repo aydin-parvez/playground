@@ -6,7 +6,8 @@ from tkinter import messagebox
 canvasWidth = 750
 canvasHeight = 500
 window = tkinter.Tk()
-canvas = tkinter.Canvas(window, width=canvasWidth, height=canvasHeight, bg="gold")
+canvas = tkinter.Canvas(window, width=canvasWidth, height=canvasHeight, bg="white")
+
 canvas.pack()
 bat = canvas.create_rectangle(0, 0, 40, 10, fill="dark turquoise")
 ball = canvas.create_oval(0, 0, 10, 10, fill="deep pink")
@@ -15,8 +16,9 @@ score = 0
 leftPressed = 0
 rightPressed = 0
 batSpeed = 6
-ballMoveX = 4
-ballMoveY = -4
+ballSpeed = 100
+ballMoveX = ballSpeed
+ballMoveY = -ballSpeed
 setBatTop = canvasHeight-40
 setBatBottom = canvasHeight-30
 
@@ -55,7 +57,7 @@ def move_bat():
 
 
 def move_ball():
-    global ballMoveX, ballMoveY
+    global ballMoveX, ballMoveY, score
     (ballLeft, ballTop, ballRight, ballBottom) = canvas.coords(ball)
     if ballMoveX > 0 and ballRight > canvasWidth:
         ballMoveX = -ballMoveX
@@ -65,6 +67,7 @@ def move_ball():
             ballMoveY = -ballMoveY
     if ballMoveY < 0 and ballTop < 0:
         ballMoveY = -ballMoveY
+        score += 1
     if ballMoveY > 0 and setBatTop < ballBottom < setBatBottom:
         (batLeft, ballTop, batRight, batBottom) = canvas.coords(bat)
         if ballRight > batLeft and ballLeft < batRight:
@@ -73,8 +76,10 @@ def move_ball():
 
 
 def check_game_over():
+    global score
     (ballLeft, ballTop, ballRight, ballBottom) = canvas.coords(ball)
     if ballTop > canvasHeight:
+        tkinter.messagebox.askokcancel(message="Score=" + str(score))
         play_again = tkinter.messagebox.askyesno(message="Do you want to play again?")
         if play_again:
             reset()
@@ -83,19 +88,22 @@ def check_game_over():
 
 
 def close():
+    global windowOpen
+    windowOpen = False
     window.destroy()
 
 
 def reset():
     global leftPressed, rightPressed
     global ballMoveX, ballMoveY
+    global score
+    score = 0
     leftPressed = 0
     rightPressed = 0
     ballMoveX = 4
     ballMoveY = -4
     canvas.coords(bat, 10, setBatTop, 50, setBatBottom)
     canvas.coords(ball, 20, setBatTop-10, 30,  setBatTop)
-
 
 
 window.protocol("WM_DELETE_WINDOW", close)
