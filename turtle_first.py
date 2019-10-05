@@ -16,7 +16,7 @@ def draw_square(size):
 
 
 color = 'red'
-for x in range(1, 100):
+for x in range(1, 10):
     alex.pencolor(color)
     draw_square(5 * x)
     alex.left(45)
