@@ -1,7 +1,7 @@
 import tkinter
 import time
 from tkinter import messagebox
-
+print("Keep the ball in the air!")
 
 canvasWidth = 750
 canvasHeight = 500
