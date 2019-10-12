@@ -1,6 +1,7 @@
 import tkinter
 print("To draw, hold down the left mouse button and mouse around.")
 print("To change your brush colour, click on one of the colours.")
+print("To erase, click on the white button and go on colours you put on the screen.")
 window = tkinter.Tk()
 canvas = tkinter.Canvas(window, width=750, height=500, bg="white")
 canvas.pack()
