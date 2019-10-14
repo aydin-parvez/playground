@@ -6,7 +6,7 @@ print("Keep the ball in the air!")
 canvasWidth = 750
 canvasHeight = 500
 window = tkinter.Tk()
-canvas = tkinter.Canvas(window, width=canvasWidth, height=canvasHeight, bg="white")
+canvas = tkinter.Canvas(window, width=canvasWidth, height=canvasHeight, bg="violet")
 
 canvas.pack()
 bat = canvas.create_rectangle(0, 0, 40, 10, fill="dark turquoise")
@@ -79,9 +79,9 @@ def check_game_over():
     global score
     (ballLeft, ballTop, ballRight, ballBottom) = canvas.coords(ball)
     if ballTop > canvasHeight:
-        tkinter.messagebox.askokcancel(message="Score=" + str(score))
+        print("Your score was ", str(score))
         play_again = tkinter.messagebox.askyesno(message="Do you want to play again?")
-        if play_again:
+        if play_again == True:
             reset()
         else:
             close()

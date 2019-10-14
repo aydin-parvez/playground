@@ -27,14 +27,15 @@ def on_drag(event):
 canvas.bind("<Button-1>", on_click)
 canvas.bind("<B1-Motion>", on_drag)
 red_id = canvas.create_rectangle(10, 10, 30, 30, fill="red")
+
 blue_id = canvas.create_rectangle(10, 35, 30, 55, fill="blue")
 black_id = canvas.create_rectangle(10, 60, 30, 80, fill="black")
-white_id = canvas.create_rectangle(10, 85, 30,105, fill="white")
+white_id = canvas.create_rectangle(10, 85, 30, 105, fill="white")
 
 
 def set_colour_red(event):
     global colour
-    colour="red"
+    colour = "red"
 
 
 def set_colour_blue(event):
@@ -44,12 +45,12 @@ def set_colour_blue(event):
 
 def set_colour_black(event):
     global colour
-    colour="black"
+    colour = "black"
 
 
 def set_colour_white(event):
     global colour
-    colour="white"
+    colour = "white"
 
 
 canvas.tag_bind(red_id, "<Button-1>", set_colour_red)

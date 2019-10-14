@@ -1,6 +1,6 @@
 #This is the final version.
 #Do not delete!
-import random
+import fun
 
 exitchoice = "Nothing"
 
@@ -33,7 +33,7 @@ while exitchoice != "EXIT":
         print("You enter a room with a sphinix.")
         print("It asks you to guess what number  it is thinking of, between 1 and 10")
         number = int(input("What number do you choose?"))
-        if number == random.randint(1, 10):
+        if number == fun.randint(1, 10):
             print("The spinix hissed in disappointment.You guessed correctly.")
             print("She must let you free.")
             print("GAME OVER, YOU WIN!")

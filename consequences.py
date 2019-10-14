@@ -11,15 +11,15 @@ womanSays = ["Who are you?", "How many beans make five?", "Why?"]
 manSays = ["Beep boop!", "Don't eat frogs!", "What time do you call this?"]
 consequence = ["world peace", "chaos", "a giant foot squashed them"]
 worldSaid = ["Errant nonsense!", "Cheese is trending now.", "I'm melting!"]
-import random
+import fun
 while True:
-    print(random.choice(woman), "met", random.choice(man), "in", random.choice(place))
-    print("She was wearing", random.choice(sheWore))
-    print("He was wearing", random.choice(heWore))
-    print("She said", random.choice(womanSays))
-    print("He said", random.choice(manSays))
-    print("The consequense was", random.choice(consequence))
-    print("The world said", random.choice(worldSaid))
+    print(fun.choice(woman), "met", fun.choice(man), "in", fun.choice(place))
+    print("She was wearing", fun.choice(sheWore))
+    print("He was wearing", fun.choice(heWore))
+    print("She said", fun.choice(womanSays))
+    print("He said", fun.choice(manSays))
+    print("The consequense was", fun.choice(consequence))
+    print("The world said", fun.choice(worldSaid))
     print()
     input("Press enter to read again.")
     print()

@@ -1,4 +1,4 @@
-import random
+import fun
 
 print("In front of you are four doors.You must choose one.")
 
@@ -27,7 +27,7 @@ elif playerchoice=="4":
     print("You enter a room with a sphinix.")
     print("It asks you to guess what number  it is thinking of, between 1 and 10")
     number = int(input("What number do you choose?"))
-    if number==random.randint(1,10):
+    if number==fun.randint(1, 10):
         print("The spinix hissed in disappointment.You guessed correctly.")
         print("She must let you free.")
         print("GAME OVER, YOU WIN!")
